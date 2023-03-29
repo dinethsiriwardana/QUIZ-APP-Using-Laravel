@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Course; // import the Course model
+
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $courses = Course::all(); // retrieve all courses from the database
+        return view('home', ['courses' => $courses]); // pass the courses data to the home view
+    
     }
 }
