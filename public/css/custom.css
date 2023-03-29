@@ -7,3 +7,14 @@
     border-color: rgb(255, 255, 255);
     padding-left: 15px;
 }
+
+.modeltextinput{
+    width: 75%;
+    background: rgba(255,255,255,0);
+    border-style: solid;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-color: #191e29;
+    border-left-style: none;
+    border-bottom-width: 1px;
+}
