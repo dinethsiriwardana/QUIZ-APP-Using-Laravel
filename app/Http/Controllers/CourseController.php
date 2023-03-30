@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Course;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -16,4 +17,15 @@ class CourseController extends Controller
         $course->save();
         return response()->json(['message' => 'Course added successfully.']);
     }
+
+    public function show($id)
+    {
+        $course = DB::table('courses')->where('course_id', $id)->first();
+
+        return view('course', ['course' => $course]);
+        // dd($id);
+
+    }
+
+
 }

@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="modal-dialog" role="document">
 
         <div class="modal-content">
@@ -25,28 +25,25 @@
 import axios from 'axios';
 
 export default {
-  data() {
-    return {
-      courseName: '',
-    //   addCourseUrl: '{{ route('add_course') }}',
-      addCourseUrl: "{{ route('add_course') }}",
+    data() {
+        return {
+            courseName: '',
+        };
+    },
 
-    };
-  },
-  methods: {
+ methods: {
     AddCourse() {
-      axios.post(this.addCourseUrl, {
-        _token: '{{ csrf_token() }}',
+      axios.post(addCourseUrl, {
+        _token: csrfToken,
         course_name: this.courseName,
       })
       .then(response => {
         location.reload();
       })
       .catch(error => {
-        alert('Error adding course!'+);
-
+        alert('Error adding course!');
       });
     },
   },
 };
-</script> -->
+</script>

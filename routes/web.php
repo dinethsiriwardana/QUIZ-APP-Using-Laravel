@@ -18,3 +18,12 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('/add_course', [CourseController::class, 'addCourse'])->name('add_course');
+
+// Route::get('/courses/{id}', 'CourseController@show');
+Route::get('/courses/{id}', [App\Http\Controllers\CourseController::class, 'show'])->name('course.show');
+
+
+// Route::get('/courses/{id}', function ($id) {
+//     return view('course', ['id' => $id]);
+// });
+
