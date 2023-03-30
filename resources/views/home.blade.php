@@ -5,7 +5,8 @@
         <div class="container d-lg-flex justify-content-lg-center" style="width: 100%;max-width: 100%;margin-top: 70px;">
             <button class="btn btn-primary d-block icon-button w-100" type="button"
                 style="width: 250px;max-width: 250px;background: #01c38d;border-style: none;" class="btn btn-primary"
-                data-toggle="modal" data-target="#exampleModal">
+                {{-- data-toggle="modal" data-target="#exampleModal"   --}}
+                onclick="addCourse()" >
                 <i class="fa fa-plus"></i>
                 <span>Add New Course</span>
             </button>
@@ -30,8 +31,6 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary" id="add_course_btn" onclick="addCourse()">Save changes</button>
-                        
-
                     </div>
                 </div>
             </div>

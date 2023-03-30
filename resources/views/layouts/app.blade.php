@@ -85,27 +85,6 @@
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 <script src="{{ asset('js/addCourse.js') }}"></script>
 
-<script>
-    function addCourse() {
-        var courseName = $('#add_course_name').val(); // get the course name value
-        $.ajax({
-            url: "{{ route('add_course') }}", // the server endpoint for adding a new course
-            type: "POST",
-            data: {
-                _token: '{{ csrf_token() }}',
-                course_name: courseName
-            },
-            success: function(data) {
-                // refresh the page to see the new course in the table
-                location.reload();
-            },
-            error: function(xhr) {
-                // handle errors
-                alert('Error adding course!');
-            }
-        });
-    }
-    </script>
     
 </body>
 

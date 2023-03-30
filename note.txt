@@ -1,0 +1,23 @@
+User Table
+         id
+         name
+         email
+         password
+
+Courses table 
+         course_id
+         course_name
+
+Quiz table
+          quiz_id
+          course_id - Foreign key from Courses table (course_id)
+          quiz_by - Foreign key from User table (name)
+          time - Countdown Time 
+
+all_quiz_table
+          id
+          quiz_id - Foreign key from Quiz table (quiz_id)
+          course_id - Foreign key from Courses table (course_id)
+          quiz_title - String
+          a1 - String
+          correct_a - int
