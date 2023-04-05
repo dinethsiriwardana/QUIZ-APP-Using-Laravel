@@ -2,28 +2,32 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\AddQuizPageController;
 
 
 
-use App\Models\Course; // import the Course model
-
-Route::get('/', function () {
-    $courses = Course::all(); // retrieve all courses from the database
-    return view('home', ['courses' => $courses]); // pass the courses data to the home view
-});
+Route::get('/', [LandingPageController::class, 'index'])->name('LandingPage');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::post('/add_course', [CourseController::class, 'addCourse'])->name('add_course');
-
-// Route::get('/courses/{id}', 'CourseController@show');
-Route::get('/courses/{id}', [App\Http\Controllers\CourseController::class, 'show'])->name('course.show');
+Route::get('/courses', [HomeController::class, 'index'])->name('courses');
 
 
-// Route::get('/courses/{id}', function ($id) {
-//     return view('course', ['id' => $id]);
-// });
+Route::middleware(['auth'])->group(function () {
+    Route::post('/add_course', [CourseController::class, 'addCourse'])->name('add_course');
+    
+    Route::get('/courses/{id}', [CourseController::class, 'show'])->name('course');
+    
+    Route::post('/courses/{id}/addquiz/add/{qid}', [AddQuizPageController::class, 'addtoQuiz'])->name('add.quiz');
+    Route::post('/courses/{id}/addquiz/quizname', [AddQuizPageController::class, 'saveQuiz'])->name('save.quiz');
+    
+    
+    Route::get('/courses/{id}/addquiz', [AddQuizPageController::class, 'show'])->name('course.show');
+    // Your protected routes here
+});
+
+
 

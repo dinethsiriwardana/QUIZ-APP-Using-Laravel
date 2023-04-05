@@ -38,9 +38,11 @@ export default {
         course_name: this.courseName,
       })
       .then(response => {
+        console.log(response);
         location.reload();
       })
       .catch(error => {
+        console.log(error);
         alert('Error adding course!');
       });
     },

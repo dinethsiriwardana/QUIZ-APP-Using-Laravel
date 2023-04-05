@@ -26,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $courses = Course::all(); // retrieve all courses from the database
+        // dd($courses);
         return view('home', ['courses' => $courses]); // pass the courses data to the home view
     
     }
