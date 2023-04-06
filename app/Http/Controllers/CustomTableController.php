@@ -12,12 +12,19 @@ class CustomTableController extends Controller
     {
         
         Schema::create($tableName, function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->id('quiz_no');
+            $table->unsignedBigInteger('quiz_id');
+            $table->foreign('quiz_id')->references('quiz_id')->on('quiz');
+            $table->string('question');
+            $table->string('answer_1');
+            $table->string('answer_2');
+            $table->string('answer_3');
+            $table->string('answer_4');
+            $table->string('quiz_correct');
             $table->timestamps();
         });
         
         // return 'Table '.$tableName.' created successfully';
     }
+    
 }
