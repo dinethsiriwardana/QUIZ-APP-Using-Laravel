@@ -22,6 +22,11 @@
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/Icon-Button.css') }}" rel="stylesheet">
     <link href="{{ asset('fonts/font-awesome.min.css') }}" rel="stylesheet">
+     <style>
+        .page-link{
+            margin: 10px;   
+        }
+    </style>
 </head>
 
 <body style="height: 100vh;width: 100%;max-height: 100vh; background: #191e29;">
@@ -96,6 +101,19 @@
         var addCourseUrl = '{{ route('add_course') }}';
         console.log(addCourseUrl);
     </script>
+
+<script>
+    function showQuestion(questionIndex) {
+        var questions = document.querySelectorAll('.quizblock');
+        for (var i = 0; i < questions.length; i++) {
+            if (i == questionIndex) {
+                questions[i].classList.remove('d-none');
+            } else {
+                questions[i].classList.add('d-none');
+            }
+        }
+    }
+</script>
 
 
 </body>

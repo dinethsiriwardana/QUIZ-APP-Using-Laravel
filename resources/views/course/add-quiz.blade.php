@@ -41,7 +41,7 @@
                             </small>
                         </div>
                         <div class="col d-xl-flex align-items-xl-center">
-                            <textarea style="width: 90%;height: 75px;" name="question"></textarea>
+                            <textarea style="width: 90%;height: 75px;" name="question">Question</textarea>
                         </div>
                     </div>
                     <div class="row" style="height: auto;padding-top: 5px;padding-bottom: 15px;">
@@ -51,7 +51,7 @@
                             </small>
                         </div>
                         <div class="col d-xl-flex align-items-xl-center">
-                            <textarea style="width: 90%;height: 75px;" name="answer1"></textarea>
+                            <textarea style="width: 90%;height: 75px;" name="answer1">answer1</textarea>
                         </div>
                     </div>
                     <div class="row" style="height: auto;padding-top: 5px;padding-bottom: 15px;">
@@ -61,7 +61,7 @@
                             </small>
                         </div>
                         <div class="col d-xl-flex align-items-xl-center">
-                            <textarea style="width: 90%;height: 75px;" name="answer2"></textarea>
+                            <textarea style="width: 90%;height: 75px;" name="answer2">answer2</textarea>
                         </div>
                     </div>
                     <div class="row" style="height: auto;padding-top: 5px;padding-bottom: 15px;">
@@ -71,7 +71,7 @@
                             </small>
                         </div>
                         <div class="col d-xl-flex align-items-xl-center">
-                            <textarea style="width: 90%;height: 75px;" name="answer3"></textarea>
+                            <textarea style="width: 90%;height: 75px;" name="answer3">answer3</textarea>
                         </div>
                     </div>
                     <div class="row" style="height: auto;padding-top: 5px;padding-bottom: 15px;">
@@ -81,7 +81,7 @@
                             </small>
                         </div>
                         <div class="col d-xl-flex align-items-xl-center">
-                            <textarea style="width: 90%;height: 75px;" name="answer4"></textarea>
+                            <textarea style="width: 90%;height: 75px;" name="answer4">answer4</textarea>
                         </div>
                     </div>
                     <div class="row" style="height: auto;padding-top: 5px;padding-bottom: 15px;">
@@ -92,7 +92,7 @@
                         </div>
                         <div class="col d-xl-flex align-items-xl-center">
                             <input type="number" style="width: 90%;font-size: 20px;" min="1" max="4"
-                                step="1" value="1" name="answerc" />
+                                step="1" value="1" name="answerc"/>
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,13 @@
                             </h1>
                         </div>
                         <div class="col">
-                            <h1 style="color: rgb(255,255,255);">No of Quiz :</h1>
+                            <h1 style="color: rgb(255,255,255);">No of Quiz :
+                                @if (session('quizcount'))
+                                {{ session('quizcount') }}
+                            @else
+                                ~
+                            @endif
+                        </h1>
                         </div>
                     </div>
                     <button class="btn btn-primary d-block icon-button w-100" type="submit"

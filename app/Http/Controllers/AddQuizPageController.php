@@ -22,7 +22,6 @@ class AddQuizPageController extends Controller
 
     public function saveQuiz(Request $request, $id)
     {
-        // dd($id);
         $quiz = new AllQuiz;
         $quiz->course_id = $id;
         $quiz->quiz_by = Auth::id();;
@@ -45,8 +44,9 @@ class AddQuizPageController extends Controller
             'answerc' => 'required|integer|between:1,4',
         ]);
 
-
-        $addquiz = new AddQuizTable(['id' => $id]);
+        $table_name =  $id . '_course_quiz'; // dynamic table name based on course ID
+        $addquiz = new AddQuizTable();
+        $addquiz->setTable($table_name);
         $addquiz->quiz_id = $qid;
         $addquiz->question = $validatedData['question'];
         $addquiz->answer_1 = $validatedData['answer1'];
@@ -54,8 +54,8 @@ class AddQuizPageController extends Controller
         $addquiz->answer_3 = $validatedData['answer3'];
         $addquiz->answer_4 = $validatedData['answer4'];
         $addquiz->quiz_correct = $validatedData['answerc'];
-        $addquiz->save();   
-        $quizcount = AddQuizTable::where('quiz_id', 1)->count();
+        $addquiz->save();
+        $quizcount = DB::table($addquiz->getTable())->where('quiz_id', $qid)->count();
 
         return redirect()->back()->with(['quizcount' => $quizcount, 'quizid' => $qid]);
     }

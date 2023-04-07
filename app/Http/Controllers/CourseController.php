@@ -34,11 +34,18 @@ class CourseController extends Controller
         $course = DB::table('courses')->where('course_id', $id)->first();
         $totalquiz = DB::table('quiz')->where('course_id', $id)->count();
         $users = DB::table('users')->pluck('name', 'id')->toArray();
+
+        $quizCounts = DB::table('3_course_quiz')
+                ->select('quiz_id', DB::raw('count(*) as count'))
+                ->groupBy('quiz_id')
+                ->pluck('count', 'quiz_id')
+                ->toArray();
+        // dd($quizCounts);
        
 
         $quiz = AllQuiz::all()->where('course_id', $id); // retrieve all courses from the database
 
 
-        return view('course/course', ['course' => $course], ['totalquiz' => $totalquiz, 'quiz' => $quiz, 'users' => $users]);
+        return view('course/course', ['course' => $course], ['totalquiz' => $totalquiz, 'quiz' => $quiz, 'users' => $users, 'quizCounts' => $quizCounts]);
     }
 }

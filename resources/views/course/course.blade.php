@@ -43,8 +43,10 @@
     <div class="container" style="margin-top: 50px; width: 85%;max-width: 85%; padding-bottem: 50px;">
         <div class="row row-cols-3" style="padding-bottom: 50px;">
 
+
+            {{-- ! Dont Edit this --}}
             @foreach ($quiz as $thisquiz)
-            <a href="{{ route('course', $thisquiz->quiz_id) }}" style="text-decoration:none;">
+            <a href="{{ route('quiz', [$course->course_id, $thisquiz->quiz_id]) }}" style="text-decoration:none;">
                 <div class="col d-lg-flex justify-content-lg-center"
                     style="padding-right: 0;padding-left: 0;margin: 0px;margin-top: 15px;">
                     <div class="d-lg-flex flex-column justify-content-lg-center align-items-lg-center"
@@ -61,7 +63,9 @@
                         <div class="row" style="text-align: center;">
                             <div class="col" style="text-align: center;"><small style="color: rgb(255,255,255);">No.
                                     of
-                                    Quizzes : 1</small></div>
+                                    Quizzes : 
+                                    {{$quizCounts[$thisquiz->quiz_id] ?? 0}}
+                                </small></div>
                         </div>
                     </div>
                 </div>

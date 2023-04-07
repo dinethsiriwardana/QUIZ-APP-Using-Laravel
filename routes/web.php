@@ -6,8 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\AddQuizPageController;
-
-
+use App\Http\Controllers\ShowQuizController;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('LandingPage');
 
@@ -20,8 +19,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/add_course', [CourseController::class, 'addCourse'])->name('add_course');
     
     Route::get('/courses/{id}', [CourseController::class, 'show'])->name('course');
+
+    Route::get('/courses/{id}/quiz/{qid}', [ShowQuizController::class, 'show'])->name('quiz');
+    
+    Route::post('/courses/{id}/quiz/{qid}/submit', [ShowQuizController::class, 'submitQuiz'])->name('quiz.submit');
     
     Route::post('/courses/{id}/addquiz/add/{qid}', [AddQuizPageController::class, 'addtoQuiz'])->name('add.quiz');
+    
     Route::post('/courses/{id}/addquiz/quizname', [AddQuizPageController::class, 'saveQuiz'])->name('save.quiz');
     
     

@@ -9,14 +9,8 @@ class AddQuizTable extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id'];
 
-    
-    protected $table = 'ddd';
+    protected $table = 'tablename';
 
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct($attributes);
-        $this->table = $attributes['id'].'_course_quiz';
-    }
+
 }

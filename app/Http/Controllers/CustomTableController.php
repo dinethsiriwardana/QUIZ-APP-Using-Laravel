@@ -24,7 +24,7 @@ class CustomTableController extends Controller
             $table->timestamps();
         });
         
-        // return 'Table '.$tableName.' created successfully';
+        return 'Table '.$tableName.' created successfully';
     }
     
 }
