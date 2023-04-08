@@ -21,54 +21,68 @@ This application is built using Laravel Framework and MySQL database.
     
     bashCopy code
     
-    `git clone https://github.com/your-username/online-quiz-app.git` 
+    ```sh
+    git clone https://github.com/your-username/online-quiz-app.git
+    ``` 
     
 2.  Switch to the project folder
     
     bashCopy code
     
-    `cd online-quiz-app` 
+    ```sh
+    cd online-quiz-app` 
     
 3.  Install dependencies
     
     Copy code
     
-    `composer install` 
+    ```sh
+    composer install` 
     
 4.  Create a `.env` file from the example
     
     bashCopy code
     
-    `cp .env.example .env` 
+    ```sh
+    cp .env.example .env
+    ``` 
     
 5.  Generate an application key
     
     vbnetCopy code
     
-    `php artisan key:generate` 
+    ```sh
+    php artisan key:generate
+    ``` 
     
 6.  Configure your database in the `.env` file
     
     makefileCopy code
     
-    `DB_CONNECTION=mysql
+    ```php
+    DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
     DB_DATABASE=your_database_name
     DB_USERNAME=your_database_username
-    DB_PASSWORD=your_database_password` 
+    DB_PASSWORD=your_database_password
+    ``` 
     
 7.  Run database migrations
     
     Copy code
     
-    `php artisan migrate` 
+    ```sh
+    php artisan migrate
+    ``` 
     
 8.  Start the development server
     
     Copy code
     
-    `php artisan serve` 
+    ```sh
+    php artisan serve
+    ``` 
     
 
 ## Usage
