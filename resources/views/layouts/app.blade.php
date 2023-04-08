@@ -37,7 +37,7 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
-                    <a class="navbar-brand d-flex align-items-center" href="#">
+                    <a class="navbar-brand d-flex align-items-center" href="/courses">
                         <img src="/img/icons8-test-passed-96.png" style="width: 30px;">
                         <span>Quiz App</span>
                     </a>

@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-    {{-- @if (session('quizid')) --}}
+    @if (session('quizid'))
     <div class="container"
         style="width: 95%;max-width: 95%;padding: 30px;padding-bottom: 50px;margin-top: 50px;padding-top: 15px;">
         <form method="POST" action="/courses/{{ $course->course_id }}/addquiz/add/{{ session('quizid') }}">
@@ -41,7 +41,7 @@
                             </small>
                         </div>
                         <div class="col d-xl-flex align-items-xl-center">
-                            <textarea style="width: 90%;height: 75px;" name="question">Question</textarea>
+                            <textarea style="width: 90%;height: 75px;" name="question"></textarea>
                         </div>
                     </div>
                     <div class="row" style="height: auto;padding-top: 5px;padding-bottom: 15px;">
@@ -51,7 +51,7 @@
                             </small>
                         </div>
                         <div class="col d-xl-flex align-items-xl-center">
-                            <textarea style="width: 90%;height: 75px;" name="answer1">answer1</textarea>
+                            <textarea style="width: 90%;height: 75px;" name="answer1"></textarea>
                         </div>
                     </div>
                     <div class="row" style="height: auto;padding-top: 5px;padding-bottom: 15px;">
@@ -61,7 +61,7 @@
                             </small>
                         </div>
                         <div class="col d-xl-flex align-items-xl-center">
-                            <textarea style="width: 90%;height: 75px;" name="answer2">answer2</textarea>
+                            <textarea style="width: 90%;height: 75px;" name="answer2"></textarea>
                         </div>
                     </div>
                     <div class="row" style="height: auto;padding-top: 5px;padding-bottom: 15px;">
@@ -71,7 +71,7 @@
                             </small>
                         </div>
                         <div class="col d-xl-flex align-items-xl-center">
-                            <textarea style="width: 90%;height: 75px;" name="answer3">answer3</textarea>
+                            <textarea style="width: 90%;height: 75px;" name="answer3"></textarea>
                         </div>
                     </div>
                     <div class="row" style="height: auto;padding-top: 5px;padding-bottom: 15px;">
@@ -81,7 +81,7 @@
                             </small>
                         </div>
                         <div class="col d-xl-flex align-items-xl-center">
-                            <textarea style="width: 90%;height: 75px;" name="answer4">answer4</textarea>
+                            <textarea style="width: 90%;height: 75px;" name="answer4"></textarea>
                         </div>
                     </div>
                     <div class="row" style="height: auto;padding-top: 5px;padding-bottom: 15px;">
@@ -124,7 +124,7 @@
             </div>
         </form>
     </div>
-    {{-- @else --}}
+    @else
     <form method="POST" action="/courses/{{ $course->course_id }}/addquiz/quizname">
         @csrf
         <div class="container d-flex d-xl-flex flex-column justify-content-xl-center align-items-xl-center"
@@ -157,5 +157,5 @@
             </div>
         </div>
     </form>
-    {{-- @endif --}}
+    @endif
 @endsection

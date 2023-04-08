@@ -35,7 +35,7 @@ class CourseController extends Controller
         $totalquiz = DB::table('quiz')->where('course_id', $id)->count();
         $users = DB::table('users')->pluck('name', 'id')->toArray();
 
-        $quizCounts = DB::table('3_course_quiz')
+        $quizCounts = DB::table($id.'_course_quiz')
                 ->select('quiz_id', DB::raw('count(*) as count'))
                 ->groupBy('quiz_id')
                 ->pluck('count', 'quiz_id')

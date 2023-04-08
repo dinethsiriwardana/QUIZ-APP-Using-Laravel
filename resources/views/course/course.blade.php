@@ -50,7 +50,7 @@
                 <div class="col d-lg-flex justify-content-lg-center"
                     style="padding-right: 0;padding-left: 0;margin: 0px;margin-top: 15px;">
                     <div class="d-lg-flex flex-column justify-content-lg-center align-items-lg-center"
-                        style="width: 80%;background: linear-gradient(#c30137, #ed0747), #c30137;height: 130px;border-radius: 10px;border: 1px solid rgb(255,255,255);">
+                        style="width: 80%;background: linear-gradient(#c30137, #ed0747), #c30137;height: 150px;border-radius: 10px;border: 1px solid rgb(255,255,255);">
                         <h1 style="text-align: center;color: #ffffff;margin-top: 0px;">{{ $thisquiz->quiz_name }}</h1>
                         <div class="row">
                             <div class="col" style="text-align: center;"><small

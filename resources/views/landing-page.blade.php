@@ -36,7 +36,7 @@
                 <h1 style="text-align: center;color: rgb(255,255,255);font-size: 50px;width: 388px;">Quiz App</h1>
                 <h1 style="text-align: center;color: #01c38d;font-size: 100px;width: 432px;margin-top: 15px;">Welcome</h1>
                 <a href="/login" class="btn btn-primary btn-log-reg" role="button">Login</a>
-                <a class="btn btn-primary btn-log-reg" role="button">Register</a>
+                <a href="/register" class="btn btn-primary btn-log-reg" role="button">Register</a>
             </div>
         </div>
   
