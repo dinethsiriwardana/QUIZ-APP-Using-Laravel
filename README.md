@@ -30,14 +30,16 @@ This application is built using Laravel Framework and MySQL database.
     bashCopy code
     
     ```sh
-    cd online-quiz-app` 
+    cd online-quiz-app
+    ``` 
     
 3.  Install dependencies
     
     Copy code
     
     ```sh
-    composer install` 
+    composer install
+    ``` 
     
 4.  Create a `.env` file from the example
     
